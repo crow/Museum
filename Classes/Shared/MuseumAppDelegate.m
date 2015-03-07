@@ -32,7 +32,7 @@
 #import "UAPush.h"
 #import "UAInbox.h"
 #import "UAInboxMessageList.h"
-#import "GimbalAdapter.h"
+#import <Gimbal/Gimbal.h>
 
 @interface MuseumAppDelegate()
 @property (nonatomic, strong) UAInboxDefaultJSDelegate *jsDelegate;
@@ -50,7 +50,7 @@
     // You should remove this in your app.
     [self failIfSimulator];
 
-    [Gimbal setAPIKey:@"a20d8074-02c2-4e24-9995-12c5ba00e7f0" options:nil];
+    [Gimbal setAPIKey:@"aba5ffa1-d96b-45c4-831b-535278ad4e99" options:nil];
 
     // Set log level for debugging config loading (optional)
     // It will be set to the value in the loaded config upon takeOff
@@ -86,8 +86,6 @@
     // time to enable push to increase the likelihood that the user will accept
     // notifications.
     [UAPush shared].userPushNotificationsEnabled = YES;
-
-    [[GimbalAdapter shared] startAdapter];
 
     // Return value is ignored for push notifications, so it's safer to return
     // NO by default for other resources

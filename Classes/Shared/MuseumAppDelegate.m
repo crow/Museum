@@ -22,6 +22,7 @@
  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+
 #import "MuseumAppDelegate.h"
 
 #import "InboxSampleViewController.h"
@@ -42,15 +43,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    UINavigationController *strongNavigationController = self.navigationController;
-    [self.window setRootViewController:strongNavigationController];
-    [self.window makeKeyAndVisible];
-
     // Display a UIAlertView warning developers that push notifications do not work in the simulator
     // You should remove this in your app.
     [self failIfSimulator];
 
-    [Gimbal setAPIKey:@"a20d8074-02c2-4e24-9995-12c5ba00e7f0" options:nil];
+    [Gimbal setAPIKey:@"d4d69f48-ca49-4206-b977-30a495c75a83" options:nil];
 
     // Set log level for debugging config loading (optional)
     // It will be set to the value in the loaded config upon takeOff

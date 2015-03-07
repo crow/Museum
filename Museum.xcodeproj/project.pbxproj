@@ -80,6 +80,8 @@
 		9A50FAE90FCA81810007E1BE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A50FAE80FCA81810007E1BE /* CFNetwork.framework */; };
 		9A50FAEF0FCA81A40007E1BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A50FAEE0FCA81A40007E1BE /* Foundation.framework */; };
 		9A50FAF60FCA81BD0007E1BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A50FAF50FCA81BD0007E1BE /* UIKit.framework */; };
+		B09244941AAB915A006377C3 /* MuseumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09244931AAB915A006377C3 /* MuseumViewController.m */; };
+		B09244961AAB9C67006377C3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B09244951AAB9C67006377C3 /* MainStoryboard.storyboard */; };
 		CC9EA97819CA34B20003D393 /* NSString+UASizeWithFontCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9EA97619CA34B20003D393 /* NSString+UASizeWithFontCompatibility.m */; };
 		D5A192A812C15AA6006AF4AE /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = D5A192A712C15AA6006AF4AE /* iTunesArtwork */; };
 		D5C75C9612BC23BB0041239E /* InboxSampleViewControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5C75C9112BC23BB0041239E /* InboxSampleViewControlleriPad.xib */; };
@@ -186,6 +188,9 @@
 		9A50FAF50FCA81BD0007E1BE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9A50FBB90FCB114B0007E1BE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9AB3B21D10A0063D0035E6BD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B09244921AAB915A006377C3 /* MuseumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuseumViewController.h; sourceTree = "<group>"; };
+		B09244931AAB915A006377C3 /* MuseumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuseumViewController.m; sourceTree = "<group>"; };
+		B09244951AAB9C67006377C3 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		CC9EA97519CA34B20003D393 /* NSString+UASizeWithFontCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UASizeWithFontCompatibility.h"; sourceTree = "<group>"; };
 		CC9EA97619CA34B20003D393 /* NSString+UASizeWithFontCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UASizeWithFontCompatibility.m"; sourceTree = "<group>"; };
 		D5624D6712C2E68400A962EE /* UAInboxAlertHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAInboxAlertHandler.h; sourceTree = "<group>"; };
@@ -311,10 +316,12 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				B09244951AAB9C67006377C3 /* MainStoryboard.storyboard */,
 				E9CB367C12B89BCA002E39EA /* MuseumAppDelegate.h */,
 				E9CB367D12B89BCA002E39EA /* MuseumAppDelegate.m */,
 				E9CB367E12B89BCA002E39EA /* InboxSampleViewController.h */,
 				E9CB367F12B89BCA002E39EA /* InboxSampleViewController.m */,
+				B09244911AAB912C006377C3 /* Controller */,
 				61D7471C1AAB678900B9F0DF /* Gimbal */,
 				61D747171AAB64A300B9F0DF /* Urban Airship */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -408,6 +415,15 @@
 				1F69B12313BD1D8C002CA606 /* libz.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B09244911AAB912C006377C3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B09244921AAB915A006377C3 /* MuseumViewController.h */,
+				B09244931AAB915A006377C3 /* MuseumViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		D9FFC79E124BFD3700E8BD30 /* UI */ = {
@@ -608,6 +624,7 @@
 				61D7470C1AAB59B800B9F0DF /* UAInboxMessageListController.xib in Resources */,
 				61D747121AAB59EC00B9F0DF /* Settings.bundle in Resources */,
 				61D747151AAB5A0100B9F0DF /* UAInteractiveNotifications.strings in Resources */,
+				B09244961AAB9C67006377C3 /* MainStoryboard.storyboard in Resources */,
 				61D747061AAB599D00B9F0DF /* UAInboxMessageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,6 +660,7 @@
 			files = (
 				18A27CA7125EDD6E0045D75B /* main.m in Sources */,
 				61D7470E1AAB59DB00B9F0DF /* NSString+UALocalization.m in Sources */,
+				B09244941AAB915A006377C3 /* MuseumViewController.m in Sources */,
 				E9CB368012B89BCA002E39EA /* MuseumAppDelegate.m in Sources */,
 				493977A119B7C1E70063C58F /* InboxSampleNavigationUserInterface.m in Sources */,
 				493977A219B7C1E70063C58F /* InboxSamplePopoverUserInterface.m in Sources */,

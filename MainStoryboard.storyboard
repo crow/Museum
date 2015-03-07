@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1se-Dg-tTP">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Museum View Controller-->
+        <scene sceneID="BhX-1b-ugx">
+            <objects>
+                <viewController id="1se-Dg-tTP" customClass="MuseumViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BUo-ms-hyD"/>
+                        <viewControllerLayoutGuide type="bottom" id="FUh-Rh-rDS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9JO-dC-5R8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hull House Museum Tour" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23K-DH-3po">
+                                <rect key="frame" x="204" y="28" width="193" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZ9-nA-c8O">
+                                <rect key="frame" x="268" y="285" width="65" height="30"/>
+                                <state key="normal" title="Blue Tour">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tourButtonPressed:" destination="1se-Dg-tTP" eventType="touchUpInside" id="aKp-Gc-Zfx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9a-xs-dC5">
+                                <rect key="frame" x="269" y="323" width="62" height="30"/>
+                                <state key="normal" title="Red Tour">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tourButtonPressed:" destination="1se-Dg-tTP" eventType="touchUpInside" id="4Er-Yf-wUW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jdl-KH-CYB">
+                                <rect key="frame" x="262" y="361" width="76" height="30"/>
+                                <state key="normal" title="Green Tour">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tourButtonPressed:" destination="1se-Dg-tTP" eventType="touchUpInside" id="c1u-V2-YP4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Jdl-KH-CYB" secondAttribute="centerX" id="1XA-71-FU8"/>
+                            <constraint firstAttribute="centerX" secondItem="B9a-xs-dC5" secondAttribute="centerX" id="1fM-zH-gzF"/>
+                            <constraint firstAttribute="centerY" secondItem="IZ9-nA-c8O" secondAttribute="centerY" id="IjC-r8-3EB"/>
+                            <constraint firstItem="23K-DH-3po" firstAttribute="top" secondItem="BUo-ms-hyD" secondAttribute="bottom" constant="8" id="JFE-dl-rWH"/>
+                            <constraint firstItem="B9a-xs-dC5" firstAttribute="top" secondItem="IZ9-nA-c8O" secondAttribute="bottom" constant="8" id="SiL-P3-KKL"/>
+                            <constraint firstAttribute="centerX" secondItem="IZ9-nA-c8O" secondAttribute="centerX" id="ZMe-Dx-KzQ"/>
+                            <constraint firstAttribute="centerX" secondItem="23K-DH-3po" secondAttribute="centerX" id="gwm-jI-YEp"/>
+                            <constraint firstItem="Jdl-KH-CYB" firstAttribute="top" secondItem="B9a-xs-dC5" secondAttribute="bottom" constant="8" id="zsb-mW-OQd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l5J-72-hMR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="530" y="339"/>
+        </scene>
+    </scenes>
+</document>

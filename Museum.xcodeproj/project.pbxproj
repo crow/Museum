@@ -54,8 +54,8 @@
 		49C0CB8C19BA634F00771F4F /* UAInteractiveNotifications.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49C0CB7F19BA634F00771F4F /* UAInteractiveNotifications.strings */; };
 		49C0CB9019BA635D00771F4F /* UAInboxUI.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49C0CB8D19BA635D00771F4F /* UAInboxUI.strings */; };
 		49E001B0154F6535009305B7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E001AF154F6535009305B7 /* CoreLocation.framework */; };
+		61BFFF0C1AAB813200A8444F /* libUAirship-5.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61D746F61AAB591200B9F0DF /* libUAirship-5.1.1.a */; };
 		61D746F51AAB58D500B9F0DF /* list-image-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 61D746F41AAB58D500B9F0DF /* list-image-placeholder.png */; };
-		61D746F71AAB591200B9F0DF /* libUAirship-5.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61D746F61AAB591200B9F0DF /* libUAirship-5.1.1.a */; };
 		61D746FD1AAB594C00B9F0DF /* UADateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 61D746F81AAB594C00B9F0DF /* UADateUtils.m */; };
 		61D746FE1AAB594C00B9F0DF /* UAInboxAlertHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 61D746F91AAB594C00B9F0DF /* UAInboxAlertHandler.m */; };
 		61D746FF1AAB594C00B9F0DF /* UAInboxMessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61D746FA1AAB594C00B9F0DF /* UAInboxMessageListCell.m */; };
@@ -206,7 +206,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61D746F71AAB591200B9F0DF /* libUAirship-5.1.1.a in Frameworks */,
+				61BFFF0C1AAB813200A8444F /* libUAirship-5.1.1.a in Frameworks */,
 				49E001B0154F6535009305B7 /* CoreLocation.framework in Frameworks */,
 				1F69B12413BD1D8C002CA606 /* libz.dylib in Frameworks */,
 				9A50FAE90FCA81810007E1BE /* CFNetwork.framework in Frameworks */,
@@ -737,8 +737,6 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/dcrow/Downloads/gimbalsdk_2.8.1_ios,
-					"(1)/Frameworks",
 					"$(PROJECT_DIR)",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -753,7 +751,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../Airship\"",
 					"$(PROJECT_DIR)/Airship",
 				);
 				OTHER_CFLAGS = "-DUADEBUG";
@@ -778,8 +775,6 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/dcrow/Downloads/gimbalsdk_2.8.1_ios,
-					"(1)/Frameworks",
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -790,7 +785,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../Airship\"",
 					"$(PROJECT_DIR)/Airship",
 				);
 				OTHER_LDFLAGS = "-ObjC";

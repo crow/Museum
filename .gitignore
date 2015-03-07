@@ -1,16 +1,6 @@
 .DS_Store
-*.orig
-.hg*
-*.mode1v3
-*.pbxuser
-*.perspective*
 distribution_binaries/
 distribution_package/
-docs/html/
-docs/docset/
-Debug/
-Release/
-Distribution/
 build/
 Airship/Common/JS/UANativeBridge.c
 Airship/AirshipLib.h
@@ -22,9 +12,6 @@ fabfile.py*
 *.build_output
 # Undo files for MacVim 
 *.un~
-# CoverStory tool script
-cover.py
-OCMockLibrary
 *.swp
 Deploy/output
 test-output/

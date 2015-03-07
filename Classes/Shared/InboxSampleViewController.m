@@ -168,8 +168,6 @@ typedef NS_ENUM(NSInteger, InboxStyle) {
     self.navigationItem.rightBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"Messages"
                                                                                style:UIBarButtonItemStylePlain
                                                                               target:self action:@selector(mail:)];
-    [[GimbalAdapter shared] startAdapter];
-    [GMBLPlaceManager isMonitoring];
 }
 
 - (void)didReceiveMemoryWarning {

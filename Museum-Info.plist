@@ -58,9 +58,8 @@
 	<string>MainWindow_Pad</string>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>remote-notification</string>
 		<string>bluetooth-central</string>
-		<string>bluetooth-peripheral</string>
+		<string>remote-notification</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>MainStoryboard</string>

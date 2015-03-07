@@ -33,7 +33,7 @@
 #import "UAPush.h"
 #import "UAInbox.h"
 #import "UAInboxMessageList.h"
-#import <Gimbal/Gimbal.h>
+#import "GimbalAdapter.h"
 
 @interface MuseumAppDelegate()
 @property (nonatomic, strong) UAInboxDefaultJSDelegate *jsDelegate;
@@ -47,11 +47,14 @@
     // You should remove this in your app.
     [self failIfSimulator];
 
-    [Gimbal setAPIKey:@"d4d69f48-ca49-4206-b977-30a495c75a83" options:nil];
 
     // Set log level for debugging config loading (optional)
     // It will be set to the value in the loaded config upon takeOff
     [UAirship setLogLevel:UALogLevelTrace];
+
+    [Gimbal setAPIKey:@"aba5ffa1-d96b-45c4-831b-535278ad4e99" options:nil];
+    [[GimbalAdapter shared] startAdapter];
+
 
     // Call takeOff (which creates the UAirship singleton). This call is
     // required.

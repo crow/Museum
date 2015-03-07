@@ -33,7 +33,7 @@
 #import "UAPush.h"
 #import "UAInbox.h"
 #import "UAInboxMessageList.h"
-#import "GimbalAdapter.h"
+#import <Gimbal/Gimbal.h>
 
 @interface MuseumAppDelegate()
 @property (nonatomic, strong) UAInboxDefaultJSDelegate *jsDelegate;
@@ -83,8 +83,6 @@
     // time to enable push to increase the likelihood that the user will accept
     // notifications.
     [UAPush shared].userPushNotificationsEnabled = YES;
-
-    [[GimbalAdapter shared] startAdapter];
 
     // Return value is ignored for push notifications, so it's safer to return
     // NO by default for other resources

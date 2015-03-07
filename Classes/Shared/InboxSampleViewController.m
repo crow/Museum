@@ -68,7 +68,7 @@ typedef NS_ENUM(NSInteger, InboxStyle) {
  */
 - (UAInboxMessageListController *)buildMessageListController {
     UAInboxMessageListController *mlc = [[UAInboxMessageListController alloc] initWithNibName:@"UAInboxMessageListController" bundle:nil];
-    mlc.title = @"Inbox";
+    mlc.title = @"Messages";
 
     mlc.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                          target:self
@@ -165,10 +165,10 @@ typedef NS_ENUM(NSInteger, InboxStyle) {
 
     self.version.text = [NSString stringWithFormat:@"UAInbox Version: %@", [UAirshipVersion get]];
 
-    self.navigationItem.rightBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"Inbox"
+    self.navigationItem.rightBarButtonItem  = [[UIBarButtonItem alloc] initWithTitle:@"Messages"
                                                                                style:UIBarButtonItemStylePlain
                                                                               target:self action:@selector(mail:)];
-
+    [[GimbalAdapter shared] startAdapter];
     [GMBLPlaceManager isMonitoring];
 }
 

@@ -18,7 +18,6 @@ Airship/Common/JS/UANativeBridge.c
 Airship/AirshipLib.h
 xcuserdata/
 *.xcworkspace/
-AirshipConfig.plist
 AirshipDevelopment.plist
 fabfile.py*
 *.build_output

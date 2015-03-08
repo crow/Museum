@@ -24,6 +24,6 @@
 //chosen tour
 @property (nonatomic) NSString *chosenTourColor;
 
--(NSString *)lightNextFromVisit:(GMBLVisit *) visit andTour:(NSString *) tour;
+-(void)lightNextFromVisit:(GMBLVisit *) visit andTour:(NSString *) tour;
 
 @end

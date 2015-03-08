@@ -46,6 +46,7 @@
     self.blueGlow.alpha = 0.35;
     self.redGlow.alpha = 0.35;
     self.yellowGlow.alpha = 0.35;
+
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.2 animations:^{
             if ([sender.currentTitle isEqualToString: @"Blue Tour"]) {
@@ -65,12 +66,15 @@
             }
         }];
     }];
-    
+
     //if tourmanager and light changer are uninitialized then it means a tour has already started
     if (![TourManager shared].lightChanger) {
         NSLog(@"%@ started", sender.titleLabel.text);
         [TourManager shared].lightChanger = [[HueLightChanger alloc] initWithredORyellowORblue:[TourManager shared].chosenTourColor];
     }
+
+    //turn on first light
+    [[TourManager shared].lightChanger didExitTurnOnLight:@"2"];
 }
 
 -(void)animateTourLabels{

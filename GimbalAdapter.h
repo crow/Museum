@@ -12,6 +12,8 @@
  */
 @property (nonatomic, assign, getter=isBluetoothPoweredOffAlertEnabled) BOOL bluetoothPoweredOffAlertEnabled;
 
+@property (nonatomic, strong) GMBLVisit *lastEnterVisit;
+
 /**
  * Returns the shared `GimbalAdapter` instance.
  *

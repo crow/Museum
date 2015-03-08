@@ -16,7 +16,6 @@
 @property (assign) BOOL started;
 @property (nonatomic) GMBLPlaceManager *placeManager;
 
-@property (nonatomic, strong) GMBLVisit *lastEnterVisit;
 @property (nonatomic, strong) GMBLVisit *lastExitVisit;
 
 @end
@@ -109,7 +108,9 @@
 //    current light
 //    NSString *thisLight = [visit.place.attributes stringForKey:[self getKeyFromTour:[TourManager shared].chosenTourColor]];
 
-    [[TourManager shared].lightChanger didEnter:[self getCurrentLightFromVisit:visit]];
+    if (![visit.place.name isEqualToString:@"Beacon_0"]) {
+        [[TourManager shared].lightChanger didEnter:[self getCurrentLightFromVisit:visit]];
+    }
 
     self.lastEnterVisit = visit;
 }

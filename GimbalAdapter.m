@@ -101,13 +101,13 @@
 
     [self fireFastEvent:visit];
 
-//    [[UAPush shared] addTag:[NSString stringWithFormat:@"nearby-place-%@", visit.place.name]];
-//    [[UAPush shared] addTag:[NSString stringWithFormat:@"visited-place-%@", visit.place.name]];
-//    // Update registration
-//    [[UAPush shared] updateRegistration];
-
-    //current light
-   // NSString *thisLight = [visit.place.attributes stringForKey:[self getKeyFromTour:[TourManager shared].chosenTourColor]];
+    [[UAPush shared] addTag:[NSString stringWithFormat:@"nearby-place-%@", visit.place.name]];
+    [[UAPush shared] addTag:[NSString stringWithFormat:@"visited-place-%@", visit.place.name]];
+    // Update registration
+    [[UAPush shared] updateRegistration];
+//
+//    current light
+//    NSString *thisLight = [visit.place.attributes stringForKey:[self getKeyFromTour:[TourManager shared].chosenTourColor]];
 
     [[TourManager shared].lightChanger didEnter:[self getCurrentLightFromVisit:visit]];
 

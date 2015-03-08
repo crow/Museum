@@ -22,9 +22,9 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.blueContainerConstraint.constant = 800;
-    self.redContainerConstraint.constant = 800;
-    self.yellowContainerConstraint.constant = 800;
+    self.blueContainerConstraint.constant = 700;
+    self.redContainerConstraint.constant = 700;
+    self.yellowContainerConstraint.constant = 700;
     [self.view layoutIfNeeded];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
@@ -60,12 +60,12 @@
 
 
 -(void)animateTourLabels{
-    [UIView animateWithDuration:1.0 delay:0.1 options:UIViewAnimationOptionCurveEaseInOut animations: ^(void) {
+    [UIView animateWithDuration:1.0 animations: ^(void) {
         self.blueContainerConstraint.constant = 282;
         self.redContainerConstraint.constant = 348;
         self.yellowContainerConstraint.constant = 418;
         [self.view layoutIfNeeded];
-    } completion:nil];
+    }];
 }
 
 @end

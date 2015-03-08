@@ -101,11 +101,10 @@
 
     [self fireFastEvent:visit];
 
-    [[UAPush shared] addTag:[NSString stringWithFormat:@"nearby-place-%@", visit.place.name]];
-    [[UAPush shared] addTag:[NSString stringWithFormat:@"visited-place-%@", visit.place.name]];
-
-    // Update registration
-    //[[UAPush shared] updateRegistration];
+//    [[UAPush shared] addTag:[NSString stringWithFormat:@"nearby-place-%@", visit.place.name]];
+//    [[UAPush shared] addTag:[NSString stringWithFormat:@"visited-place-%@", visit.place.name]];
+//    // Update registration
+//    [[UAPush shared] updateRegistration];
 
     self.lastEnterVisit = visit;
 }
@@ -118,11 +117,10 @@
 //        return;
 //    }
 
-    // Remove the nearby-place-<NAME> tag
-    [[UAPush shared] removeTag:[NSString stringWithFormat:@"nearby-place-%@", visit.place.name]];
-
-    // Update registration
-    //[[UAPush shared] updateRegistration];
+//    // Remove the nearby-place-<NAME> tag
+//    [[UAPush shared] removeTag:[NSString stringWithFormat:@"nearby-place-%@", visit.place.name]];
+//    // Update registration
+//    [[UAPush shared] updateRegistration];
 
     [[TourManager shared] lightNextFromVisit:visit andTour:[TourManager shared].chosenTourColor];
 

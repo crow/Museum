@@ -40,11 +40,11 @@
 
 
     if ([nextLight isEqualToString:@"Light_2"]) {
-        //set light 2
+        //set light 2 - pass in string "2"
     }
 
     if ([nextLight isEqualToString:@"Light_3"]) {
-        //set light 3
+        //set light 3 - pass in string "3"
     }
 
     if ([nextLight isEqualToString:@"Tour_finished"]) {

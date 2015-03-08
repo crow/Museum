@@ -33,6 +33,8 @@
     self.yellowContainerConstraint.constant = 700;
     [self.view layoutIfNeeded];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+    [TourManager shared];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -53,6 +55,8 @@
                 self.blueGlow.alpha = 0.8;
 
                 [TourManager shared].chosenTourColor = @"blue";
+                [TourManager shared].lightChanger = [[HueLightChanger alloc] initWithredORyellowORblue:[TourManager shared].chosenTourColor];
+
                 [[UAPush shared] addTag:[NSString stringWithFormat:@"%@-tour", self.chosenTourColor]];
 
                 // Update registration
@@ -62,6 +66,7 @@
                 self.redGlow.alpha = 0.9;
 
                 [TourManager shared].chosenTourColor = @"red";
+                  [TourManager shared].lightChanger = [[HueLightChanger alloc] initWithredORyellowORblue:[TourManager shared].chosenTourColor];
                 [[UAPush shared] addTag:[NSString stringWithFormat:@"%@-tour", self.chosenTourColor]];
 
                 // Update registration
@@ -70,8 +75,8 @@
             if ([sender.currentTitle isEqualToString: @"Yellow Tour"]) {
                 self.yellowGlow.alpha = 0.5;
 
-
                 [TourManager shared].chosenTourColor = @"yellow";
+                  [TourManager shared].lightChanger = [[HueLightChanger alloc] initWithredORyellowORblue:[TourManager shared].chosenTourColor];
                 [[UAPush shared] addTag:[NSString stringWithFormat:@"%@-tour", self.chosenTourColor]];
 
                 // Update registration

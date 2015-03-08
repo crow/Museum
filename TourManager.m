@@ -7,6 +7,10 @@
 //
 
 #import "TourManager.h"
+#import "UAirship.h"
+#import "UAPushLocalization.h"
+#import "UAPushNotificationHandler.h"
+#import "UAActionRunner.h"
 
 @implementation TourManager
 
@@ -31,24 +35,39 @@
     return _sharedObject;
 }
 
--(NSString *)lightNextFromVisit:(GMBLVisit *) visit andTour:(NSString *) tour{
-    return [visit.place.attributes stringForKey:[self getKeyFromTour:tour]];
+-(void)lightNextFromVisit:(GMBLVisit *) visit andTour:(NSString *) tour{
+    NSString *nextLight = [visit.place.attributes stringForKey:[self getKeyFromTour:tour]];
+
+
+    if ([nextLight isEqualToString:@"Light_2"]) {
+        //set light 2 - pass in string "2"
+    }
+
+    if ([nextLight isEqualToString:@"Light_3"]) {
+        //set light 3 - pass in string "3"
+    }
+
+    if ([nextLight isEqualToString:@"Tour_finished"]) {
+
+    }
 }
 
 -(NSString *) getKeyFromTour:(NSString *) tour {
 
     if ([tour isEqualToString:@"red"]) {
-        return @"Red_tour_next_light";
+        return @"red_tour_next_light";
     }
     if ([tour isEqualToString:@"blue"]) {
-        return @"Blue_tour_next_light";
+        return @"blue_tour_next_light";
     }
     if ([tour isEqualToString:@"yellow"]) {
-        return @"Yellow_tour_next_light";
+        return @"yellow_tour_next_light";
     }
 
     NSLog(@"NO KEY FOUND");
     return @"Nokey";
 }
+
+
 
 @end

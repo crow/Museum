@@ -72,7 +72,6 @@
 
     NSURLConnection *connection2 = [[NSURLConnection alloc] initWithRequest:request
                                                                    delegate:self];
-
     [connection2 start];
 }
 

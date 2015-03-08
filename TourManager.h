@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HueLightChanger.h"
+#import "GimbalAdapter.h"
 
 @interface TourManager : NSObject
 
@@ -19,5 +20,10 @@
 
 //light changer dirtiness
 @property (nonatomic, strong) HueLightChanger *lightChanger;
+
+//chosen tour
+@property (nonatomic) NSString *chosenTourColor;
+
+-(NSString *)lightNextFromVisit:(GMBLVisit *) visit andTour:(NSString *) tour;
 
 @end

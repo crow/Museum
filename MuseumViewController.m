@@ -52,7 +52,7 @@
             if ([sender.currentTitle isEqualToString: @"Blue Tour"]) {
                 self.blueGlow.alpha = 0.8;
 
-                self.chosenTourColor = @"blue";
+                [TourManager shared].chosenTourColor = @"blue";
                 [[UAPush shared] addTag:[NSString stringWithFormat:@"%@-tour", self.chosenTourColor]];
 
                 // Update registration
@@ -61,7 +61,7 @@
             if ([sender.currentTitle isEqualToString: @"Red Tour"]) {
                 self.redGlow.alpha = 0.9;
 
-                self.chosenTourColor = @"red";
+                [TourManager shared].chosenTourColor = @"red";
                 [[UAPush shared] addTag:[NSString stringWithFormat:@"%@-tour", self.chosenTourColor]];
 
                 // Update registration
@@ -70,18 +70,13 @@
             if ([sender.currentTitle isEqualToString: @"Yellow Tour"]) {
                 self.yellowGlow.alpha = 0.5;
 
-                if ([sender.titleLabel.text isEqualToString:@"Yellow Tour"]) {
-                    self.chosenTourColor = @"yellow";
-                    [[UAPush shared] addTag:[NSString stringWithFormat:@"%@-tour", self.chosenTourColor]];
 
-                    // Update registration
-                    [[UAPush shared] updateRegistration];
-                    
-                }
+                [TourManager shared].chosenTourColor = @"yellow";
+                [[UAPush shared] addTag:[NSString stringWithFormat:@"%@-tour", self.chosenTourColor]];
 
+                // Update registration
+                [[UAPush shared] updateRegistration];
             }
-
-            
         }];
     }];
     

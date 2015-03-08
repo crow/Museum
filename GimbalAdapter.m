@@ -3,6 +3,7 @@
 #import "UAPush.h"
 #import "UAirship.h"
 #import "UAAnalytics.h"
+#import "TourManager.h"
 
 
 #define kGimbalAdapterEnabled @"ua-gimbal-adapter-enabled"
@@ -91,7 +92,7 @@
 -(void)placeManager:(GMBLPlaceManager *)manager didBeginVisit:(GMBLVisit *)visit {
     UA_LDEBUG(@"Entered a Gimbal Place: %@ on the following date: %@", visit.place.name, visit.arrivalDate);
 
-    if ([self.lastEnterVisit.place.name isEqual:visit.place.name]) {
+    if ([self.lastEnterVisit.place.name isEqualToString:visit.place.name]) {
         UA_LDEBUG(@"Squelched duplicate entry");
         return;
     }
@@ -103,12 +104,13 @@
     [[UAPush shared] updateRegistration];
 
     self.lastEnterVisit = visit;
+
 }
 
 -(void)placeManager:(GMBLPlaceManager *)manager didEndVisit:(GMBLVisit *)visit {
     UA_LDEBUG(@"Exited a Gimbal Place: %@ on the following date: %@", visit.place.name, visit.arrivalDate);
 
-    if ([self.lastExitVisit.place.name isEqual:visit.place.name]) {
+    if ([self.lastExitVisit.place.name isEqualToString:visit.place.name]) {
         UA_LDEBUG(@"Squelched duplicate exit");
         return;
     }
@@ -119,8 +121,9 @@
     // Update registration
     [[UAPush shared] updateRegistration];
 
-    self.lastExitVisit = visit;
+    [[TourManager shared] lightNextFromVisit:visit andTour:[TourManager shared].chosenTourColor];
 
+    self.lastExitVisit = visit;
 }
 
 @end

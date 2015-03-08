@@ -34,9 +34,13 @@
 #import "UAInbox.h"
 #import "UAInboxMessageList.h"
 #import "GimbalAdapter.h"
+#import "UAPushNotificationHandler.h"
+#import "UAAction.h"
+#import "UAActionRegistry.h"
 
 @interface MuseumAppDelegate()
 @property (nonatomic, strong) UAInboxDefaultJSDelegate *jsDelegate;
+@property (nonatomic, strong) UAPushNotificationHandler *notificationHandler;
 @end
 
 @implementation MuseumAppDelegate
@@ -65,8 +69,11 @@
     // Configure Inbox behavior before UAInboxPushHandler since it may need it
     // when launching from notification
 
-    // Optional: Delegate for JavaScript callback
     self.jsDelegate = [[UAInboxDefaultJSDelegate alloc] init];
+
+    self.notificationHandler = [[UAPushNotificationHandler alloc] init];
+
+
     [UAInbox shared].jsDelegate = self.jsDelegate;
 
     InboxSampleViewController *sampleViewController = self.viewController;
@@ -79,6 +86,7 @@
 
     // Use an overlay UI for simple message display
     sampleViewController.useOverlay = YES;
+
 
     // User notifications will not be enabled until userPushNotificationsEnabled is
     // set YES on UAPush. Once enabled, the setting will be persisted and the user
@@ -114,6 +122,31 @@
 
         [someError show];
     }
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+
+    UA_LINFO(@"Received remote notification (in appDelegate): %@", userInfo);
+
+    // Optionally provide a delegate that will be used to handle notifications received while the app is running
+    [UAPush shared].pushNotificationDelegate = self.notificationHandler;
+
+    // Reset the badge after a push received (optional)
+    [[UAPush shared] resetBadge];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+    UA_LINFO(@"Received remote notification (in appDelegate): %@", userInfo);
+
+    // Optionally provide a delegate that will be used to handle notifications received while the app is running
+    [UAPush shared].pushNotificationDelegate = self.notificationHandler;
+
+    // Reset the badge after a push is received in a active or inactive state
+    if (application.applicationState != UIApplicationStateBackground) {
+        [[UAPush shared] resetBadge];
+    }
+
+    completionHandler(UIBackgroundFetchResultNoData);
 }
 
 @end

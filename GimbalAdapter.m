@@ -100,17 +100,15 @@
 
     [self fireFastEvent:visit];
 
-    [[UAPush shared] addTag:[NSString stringWithFormat:@"nearby-place-%@", visit.place.name]];
-    [[UAPush shared] addTag:[NSString stringWithFormat:@"visited-place-%@", visit.place.name]];
-    // Update registration
-    [[UAPush shared] updateRegistration];
+//    [[UAPush shared] addTag:[NSString stringWithFormat:@"nearby-place-%@", visit.place.name]];
+//    [[UAPush shared] addTag:[NSString stringWithFormat:@"visited-place-%@", visit.place.name]];
+//    // Update registration
+//    [[UAPush shared] updateRegistration];
 //
 //    current light
 //    NSString *thisLight = [visit.place.attributes stringForKey:[self getKeyFromTour:[TourManager shared].chosenTourColor]];
 
-    if (![visit.place.name isEqualToString:@"Beacon_0"]) {
-        [[TourManager shared].lightChanger didEnter:[self getCurrentLightFromVisit:visit]];
-    }
+    [[TourManager shared].lightChanger didEnter:[self getCurrentLightFromVisit:visit]];
 
     self.lastEnterVisit = visit;
 }
@@ -209,14 +207,10 @@
 -(NSString *) getCurrentLightFromVisit:(GMBLVisit *) visit {
 
     if ([visit.place.name isEqualToString:@"Beacon_1"]) {
-        return @"1";
-    }
-
-    if ([visit.place.name isEqualToString:@"Beacon_2"]) {
         return @"2";
     }
 
-    if ([visit.place.name isEqualToString:@"Beacon_3"]) {
+    if ([visit.place.name isEqualToString:@"Beacon_2"]) {
         return @"3";
     }
 

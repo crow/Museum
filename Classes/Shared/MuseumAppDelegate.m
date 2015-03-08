@@ -95,6 +95,8 @@
     // notifications.
     [UAPush shared].userPushNotificationsEnabled = YES;
 
+    [[GimbalAdapter shared] setBluetoothPoweredOffAlertEnabled:YES];
+
     // Return value is ignored for push notifications, so it's safer to return
     // NO by default for other resources
     return NO;

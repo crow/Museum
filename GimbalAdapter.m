@@ -107,8 +107,6 @@
 
     // Update registration
     [[UAPush shared] updateRegistration];
-
-
 }
 
 @end

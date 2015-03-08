@@ -17,14 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HullHouse" translatesAutoresizingMaskIntoConstraints="NO" id="auW-qB-HXR">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HullHouse_3" translatesAutoresizingMaskIntoConstraints="NO" id="auW-qB-HXR">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view alpha="0.59999999999999964" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NEp-ff-B0M">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jane Adams Hull House Museum" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23K-DH-3po">
-                                        <rect key="frame" x="10" y="44" width="580" height="30"/>
+                                        <rect key="frame" x="10" y="60" width="580" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -33,9 +33,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DSN-AJ-EA8" userLabel="BlueContainer">
                                         <rect key="frame" x="190" y="282" width="220" height="35"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.39999999999999963" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HB-Z0-bH0">
+                                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.34999999999999964" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HB-Z0-bH0">
                                                 <rect key="frame" x="0.0" y="0.0" width="220" height="35"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.25882352941176473" green="0.69019607843137254" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="AZB-Dk-Vp4"/>
                                                     <constraint firstAttribute="width" constant="220" id="IFt-go-c8N"/>
@@ -51,8 +51,8 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue Tour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ou-yf-JFH">
-                                                <rect key="frame" x="66" y="6" width="87" height="24"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <rect key="frame" x="68" y="6" width="85" height="24"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -116,7 +116,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.35000000000000003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8R-P9-Ld7">
                                                 <rect key="frame" x="0.0" y="0.0" width="220" height="35"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.74901960784313726" green="0.12941176470588237" blue="0.12941176470588237" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="haT-c6-d1H"/>
                                                     <constraint firstAttribute="width" constant="220" id="wfJ-oE-74E"/>
@@ -132,8 +132,8 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red Tour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ih8-Jf-xx6">
-                                                <rect key="frame" x="68" y="6" width="83" height="24"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <rect key="frame" x="69" y="6" width="81" height="24"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -200,12 +200,12 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.35000000000000003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raX-R0-H5R">
                                                 <rect key="frame" x="0.0" y="0.0" width="220" height="35"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.99607843137254903" green="0.98039215686274506" blue="0.15294117647058825" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="220" id="L3D-8a-eGO"/>
                                                     <constraint firstAttribute="height" constant="35" id="fkj-YM-P7t"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
@@ -216,8 +216,8 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yellow Tour" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxN-X7-h15">
-                                                <rect key="frame" x="57" y="6" width="105" height="24"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <rect key="frame" x="59" y="6" width="102" height="24"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -260,8 +260,8 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a tour and follow the lights!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Unc-nH-fn4">
-                                        <rect key="frame" x="170" y="231" width="261" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="177" y="231" width="247" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -269,7 +269,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstItem="lm4-aZ-n0B" firstAttribute="top" secondItem="NEp-ff-B0M" secondAttribute="top" constant="348" id="19o-di-N3V"/>
-                                    <constraint firstItem="23K-DH-3po" firstAttribute="top" secondItem="NEp-ff-B0M" secondAttribute="top" constant="44" id="1BL-jK-8gt"/>
+                                    <constraint firstItem="23K-DH-3po" firstAttribute="top" secondItem="NEp-ff-B0M" secondAttribute="top" constant="60" id="1BL-jK-8gt"/>
                                     <constraint firstItem="lm4-aZ-n0B" firstAttribute="top" secondItem="Nmb-na-w24" secondAttribute="bottom" constant="31" id="61q-ps-O1r"/>
                                     <constraint firstItem="lm4-aZ-n0B" firstAttribute="top" secondItem="DSN-AJ-EA8" secondAttribute="bottom" constant="31" id="89x-Ww-M5E"/>
                                     <constraint firstItem="23K-DH-3po" firstAttribute="top" relation="greaterThanOrEqual" secondItem="NEp-ff-B0M" secondAttribute="top" constant="44" id="Dpu-UA-LE6"/>
@@ -319,8 +319,11 @@
                     </view>
                     <connections>
                         <outlet property="blueContainerConstraint" destination="Y15-yk-QB6" id="hP4-Bw-KeP"/>
+                        <outlet property="blueGlow" destination="6HB-Z0-bH0" id="VBh-RD-Swb"/>
                         <outlet property="redContainerConstraint" destination="19o-di-N3V" id="Hh0-J8-5eH"/>
+                        <outlet property="redGlow" destination="U8R-P9-Ld7" id="MQe-ml-Pxn"/>
                         <outlet property="yellowContainerConstraint" destination="oQg-Op-pGO" id="27d-Iz-2O0"/>
+                        <outlet property="yellowGlow" destination="raX-R0-H5R" id="oRk-25-BL7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5J-72-hMR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -329,6 +332,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="HullHouse" width="259" height="194"/>
+        <image name="HullHouse_3" width="640" height="1136"/>
     </resources>
 </document>

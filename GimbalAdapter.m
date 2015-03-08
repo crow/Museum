@@ -1,12 +1,10 @@
-/*
- * Copyright 2015 Urban Airship and Contributors
- */
-
 #import "GimbalAdapter.h"
 
 #import "UAPush.h"
 #import "UAirship.h"
 #import "UAAnalytics.h"
+#import "HueLightChanger.h"
+
 
 #define kGimbalAdapterEnabled @"ua-gimbal-adapter-enabled"
 #define kSource @"Gimbal"
@@ -96,6 +94,8 @@
 
     // Update registration
     [[UAPush shared] updateRegistration];
+
+    
 
 }
 

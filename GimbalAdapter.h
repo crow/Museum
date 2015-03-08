@@ -1,7 +1,3 @@
-/*
- * Copyright 2015 Urban Airship and Contributors
- */
-
 #import <Foundation/Foundation.h>
 #import <Gimbal/Gimbal.h>
 

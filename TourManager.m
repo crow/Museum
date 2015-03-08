@@ -31,20 +31,22 @@
     return _sharedObject;
 }
 
--(NSString *)lightNextFromVisit:(GMBLVisit *) visit andTour:(NSString *) tour{
-    return [visit.place.attributes stringForKey:[self getKeyFromTour:tour]];
+-(void)lightNextFromVisit:(GMBLVisit *) visit andTour:(NSString *) tour{
+    [visit.place.attributes stringForKey:[self getKeyFromTour:tour]];
+    
+    
 }
 
 -(NSString *) getKeyFromTour:(NSString *) tour {
 
     if ([tour isEqualToString:@"red"]) {
-        return @"Red_tour_next_light";
+        return @"red_tour_next_light";
     }
     if ([tour isEqualToString:@"blue"]) {
-        return @"Blue_tour_next_light";
+        return @"blue_tour_next_light";
     }
     if ([tour isEqualToString:@"yellow"]) {
-        return @"Yellow_tour_next_light";
+        return @"yellow_tour_next_light";
     }
 
     NSLog(@"NO KEY FOUND");

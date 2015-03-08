@@ -104,16 +104,15 @@
     [[UAPush shared] updateRegistration];
 
     self.lastEnterVisit = visit;
-
 }
 
 -(void)placeManager:(GMBLPlaceManager *)manager didEndVisit:(GMBLVisit *)visit {
     UA_LDEBUG(@"Exited a Gimbal Place: %@ on the following date: %@", visit.place.name, visit.arrivalDate);
 
-    if ([self.lastExitVisit.place.name isEqualToString:visit.place.name]) {
-        UA_LDEBUG(@"Squelched duplicate exit");
-        return;
-    }
+//    if ([self.lastExitVisit.place.name isEqualToString:visit.place.name]) {
+//        UA_LDEBUG(@"Squelched duplicate exit");
+//        return;
+//    }
 
     // Remove the nearby-place-<NAME> tag
     [[UAPush shared] removeTag:[NSString stringWithFormat:@"nearby-place-%@", visit.place.name]];

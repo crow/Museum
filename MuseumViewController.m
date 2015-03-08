@@ -33,6 +33,8 @@
     self.yellowContainerConstraint.constant = 700;
     [self.view layoutIfNeeded];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+    [TourManager shared];
 }
 
 -(void)viewDidAppear:(BOOL)animated{

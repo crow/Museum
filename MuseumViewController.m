@@ -17,6 +17,7 @@
 
 - (IBAction)tourButtonPressed:(UIButton *)sender {
     self.chosenTourColor = sender.titleLabel.text;
+    NSLog(@"%@", sender.titleLabel.text);
 }
 
 @end

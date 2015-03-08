@@ -25,40 +25,43 @@
 
 #import "UAPushLocalization.h"
 #import "UAPushNotificationHandler.h"
+#import "UAActionRunner.h"
 
 #import <AudioToolbox/AudioServices.h>
 
 @implementation UAPushNotificationHandler
 
-- (void)displayNotificationAlert:(NSString *)alertMessage {
-
-    UA_LDEBUG(@"Received an alert in the foreground.");
-
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: UAPushLocalizedString(@"UA_Notification_Title")
-                                                    message: alertMessage
-                                                   delegate: nil
-                                          cancelButtonTitle: @"OK"
-                                          otherButtonTitles: nil];
-    [alert show];
-}
-
-- (void)displayLocalizedNotificationAlert:(NSDictionary *)alertDict {
-
-    // The alert is a a dictionary with more details, let's just get the message without localization
-    // This should be customized to fit your message details or usage scenario
-    //message = [[alertDict valueForKey:@"alert"] valueForKey:@"body"];
-
-    UA_LDEBUG(@"Received an alert in the foreground with a body.");
-    
-    NSString *body = [alertDict valueForKey:@"body"];
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: UAPushLocalizedString(@"UA_Notification_Title")
-                                                    message: body
-                                                   delegate: nil
-                                          cancelButtonTitle: @"OK"
-                                          otherButtonTitles: nil];
-    [alert show];
-}
+//- (void)displayNotificationAlert:(NSString *)alertMessage {
+//
+//    UA_LDEBUG(@"Received an alert in the foreground.");
+//
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Hey!"
+//                                                    message: alertMessage
+//                                                   delegate: nil
+//                                          cancelButtonTitle: @"OK"
+//                                          otherButtonTitles: nil];
+//
+//
+//    //[alert show];
+//}
+//
+//- (void)displayLocalizedNotificationAlert:(NSDictionary *)alertDict {
+//
+//    // The alert is a a dictionary with more details, let's just get the message without localization
+//    // This should be customized to fit your message details or usage scenario
+//    //message = [[alertDict valueForKey:@"alert"] valueForKey:@"body"];
+//
+//    UA_LDEBUG(@"Received an alert in the foreground with a body.");
+//    
+//    NSString *body = [alertDict valueForKey:@"body"];
+//    
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: UAPushLocalizedString(@"UA_Notification_Title")
+//                                                    message: body
+//                                                   delegate: nil
+//                                          cancelButtonTitle: @"OK"
+//                                          otherButtonTitles: nil];
+//    //[alert show];
+//}
 
 - (void)playNotificationSound:(NSString *)sound {
     
@@ -101,6 +104,17 @@
 - (void)receivedForegroundNotification:(NSDictionary *)notification {
     UA_LDEBUG(@"Received a notification while the app was already in the foreground");
 
+    UAActionArguments *args = [UAActionArguments argumentsWithValue:[notification valueForKey:@"^p"] withSituation:UASituationManualInvocation];
+
+
+    // Optional completion handler
+    UAActionCompletionHandler completionHandler = ^(UAActionResult *result) {
+        UA_LDEBUG("Action finished!");
+    };
+
+    // Run an action by name
+    [UAActionRunner runActionWithName:@"landing_page_action" withArguments:args withCompletionHandler:completionHandler];
+
     // Do something with your customData JSON, then entire notification is also available
 }
 
@@ -111,14 +125,14 @@
 }
 
 
-- (void)receivedForegroundNotification:(NSDictionary *)notification fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
-    UA_LDEBUG(@"Received a notification while the app was already in the foreground");
-
-    // Do something with your customData JSON, then entire notification is also available
-
-    // Call the completion handler
-    completionHandler(UIBackgroundFetchResultNoData);
-}
+//- (void)receivedForegroundNotification:(NSDictionary *)notification fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+//    UA_LDEBUG(@"Received a notification while the app was already in the foreground");
+//
+//    // Do something with your customData JSON, then entire notification is also available
+//
+//    // Call the completion handler
+//    completionHandler(UIBackgroundFetchResultNoData);
+//}
 
 - (void)launchedFromNotification:(NSDictionary *)notification fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     UA_LDEBUG(@"The application was launched or resumed from a notification");

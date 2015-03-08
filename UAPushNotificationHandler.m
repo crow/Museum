@@ -28,6 +28,7 @@
 #import "UAActionRunner.h"
 
 #import <AudioToolbox/AudioServices.h>
+#import "TourManager.h"
 
 @implementation UAPushNotificationHandler
 
@@ -106,7 +107,6 @@
 
     UAActionArguments *args = [UAActionArguments argumentsWithValue:[notification valueForKey:@"^p"] withSituation:UASituationManualInvocation];
 
-
     // Optional completion handler
     UAActionCompletionHandler completionHandler = ^(UAActionResult *result) {
         UA_LDEBUG("Action finished!");
@@ -114,8 +114,6 @@
 
     // Run an action by name
     [UAActionRunner runActionWithName:@"landing_page_action" withArguments:args withCompletionHandler:completionHandler];
-
-    // Do something with your customData JSON, then entire notification is also available
 }
 
 - (void)launchedFromNotification:(NSDictionary *)notification {
@@ -123,7 +121,6 @@
 
     // Do something when launched via a notification
 }
-
 
 //- (void)receivedForegroundNotification:(NSDictionary *)notification fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
 //    UA_LDEBUG(@"Received a notification while the app was already in the foreground");
@@ -138,7 +135,7 @@
     UA_LDEBUG(@"The application was launched or resumed from a notification");
 
     // Do something when launched via a notification
-
+    
     // Call the completion handler
     completionHandler(UIBackgroundFetchResultNoData);
 }

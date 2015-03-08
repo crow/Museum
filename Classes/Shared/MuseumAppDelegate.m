@@ -51,14 +51,12 @@
     // You should remove this in your app.
     [self failIfSimulator];
 
-
     // Set log level for debugging config loading (optional)
     // It will be set to the value in the loaded config upon takeOff
     [UAirship setLogLevel:UALogLevelTrace];
 
     [Gimbal setAPIKey:@"aba5ffa1-d96b-45c4-831b-535278ad4e99" options:nil];
     [[GimbalAdapter shared] startAdapter];
-
 
     // Call takeOff (which creates the UAirship singleton). This call is
     // required.
@@ -72,7 +70,6 @@
     self.jsDelegate = [[UAInboxDefaultJSDelegate alloc] init];
 
     self.notificationHandler = [[UAPushNotificationHandler alloc] init];
-
 
     [UAInbox shared].jsDelegate = self.jsDelegate;
 

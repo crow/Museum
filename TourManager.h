@@ -14,8 +14,6 @@
 //tour manager singleton
 + (instancetype)shared;
 
-@property (nonatomic, strong) NSString
-
 //message caching dirtiness
 @property (nonatomic, strong) NSMutableDictionary *messageCache;
 

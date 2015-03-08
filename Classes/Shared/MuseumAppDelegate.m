@@ -46,6 +46,7 @@
 @implementation MuseumAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [NSThread sleepForTimeInterval:0.8];
 
     // Display a UIAlertView warning developers that push notifications do not work in the simulator
     // You should remove this in your app.

@@ -86,6 +86,7 @@
 		9A50FAF60FCA81BD0007E1BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A50FAF50FCA81BD0007E1BE /* UIKit.framework */; };
 		B09244941AAB915A006377C3 /* MuseumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09244931AAB915A006377C3 /* MuseumViewController.m */; };
 		B09244961AAB9C67006377C3 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B09244951AAB9C67006377C3 /* MainStoryboard.storyboard */; };
+		B0C8E58D1AACA44D000BD7BD /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C8E58C1AACA44D000BD7BD /* Launch Screen.xib */; };
 		CC9EA97819CA34B20003D393 /* NSString+UASizeWithFontCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9EA97619CA34B20003D393 /* NSString+UASizeWithFontCompatibility.m */; };
 		D5A192A812C15AA6006AF4AE /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = D5A192A712C15AA6006AF4AE /* iTunesArtwork */; };
 		D5C75C9612BC23BB0041239E /* InboxSampleViewControlleriPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5C75C9112BC23BB0041239E /* InboxSampleViewControlleriPad.xib */; };
@@ -202,6 +203,7 @@
 		B09244921AAB915A006377C3 /* MuseumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuseumViewController.h; sourceTree = "<group>"; };
 		B09244931AAB915A006377C3 /* MuseumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuseumViewController.m; sourceTree = "<group>"; };
 		B09244951AAB9C67006377C3 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		B0C8E58C1AACA44D000BD7BD /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		CC9EA97519CA34B20003D393 /* NSString+UASizeWithFontCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UASizeWithFontCompatibility.h"; sourceTree = "<group>"; };
 		CC9EA97619CA34B20003D393 /* NSString+UASizeWithFontCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UASizeWithFontCompatibility.m"; sourceTree = "<group>"; };
 		D5624D6712C2E68400A962EE /* UAInboxAlertHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UAInboxAlertHandler.h; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				B0C8E58C1AACA44D000BD7BD /* Launch Screen.xib */,
 				B09244951AAB9C67006377C3 /* MainStoryboard.storyboard */,
 				E9CB367C12B89BCA002E39EA /* MuseumAppDelegate.h */,
 				E9CB367D12B89BCA002E39EA /* MuseumAppDelegate.m */,
@@ -646,6 +649,7 @@
 				1F65551F1A0D815A00F41417 /* Images.xcassets in Resources */,
 				D5A192A812C15AA6006AF4AE /* iTunesArtwork in Resources */,
 				1F79710112DE3B7100D4937F /* AirshipConfig.plist in Resources */,
+				B0C8E58D1AACA44D000BD7BD /* Launch Screen.xib in Resources */,
 				61D7470A1AAB59AD00B9F0DF /* UAInboxMessageListCell.xib in Resources */,
 				61D747081AAB59A600B9F0DF /* list-image-placeholder@2x.png in Resources */,
 				61D7470C1AAB59B800B9F0DF /* UAInboxMessageListController.xib in Resources */,
@@ -779,7 +783,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				BUILD_STYLE = Debug;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -806,7 +809,7 @@
 				PRODUCT_NAME = Museum;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "$(inherited)";
 				WARNING_LDFLAGS = "";
 			};
@@ -817,7 +820,6 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				BUILD_STYLE = Release;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
@@ -839,7 +841,7 @@
 				PRODUCT_NAME = Museum;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "$(inherited)";
 				WARNING_LDFLAGS = "";
 			};

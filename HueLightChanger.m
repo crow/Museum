@@ -11,12 +11,19 @@
 #warning Set the server depending on the ip of the tehtered computer
 #define server @"http://192.168.0.119"
 
+#define red 250
+#define yellow 18000
+#define blue 45000
+
 @interface HueLightChanger ()
+
+@property int currentHue;
+
+@property NSString *currentColor;
 
 @end
 
 @implementation HueLightChanger
-
 
 //String is "red" or "yellow" or "blue"
 -(id)initWithredORyellowORblue:(NSString *)color
@@ -24,35 +31,38 @@
     self = [super init];
     if (self)
     {
-        self.colorString = color;
-        _numberOfItem = 0;
+        self.currentColor = color;
+
+        if ([color isEqualToString:@"red"]) {
+            self.currentHue = red;
+        } else if ([color isEqualToString:@"blue"])
+        {
+            self.currentHue = blue;
+        } else if ([color isEqualToString:@"yellow"]) {
+            self.currentHue = yellow;
+        }
     }
     return self;
 }
 
--(void)didEnter
+-(void)didEnter:(NSString *)light
 {
-    _numberOfItem++;
-    [self resetToWhite];
+    [self setlight:light toHue:self.currentHue];
 }
 
--(void)didExit
+-(void)didExitTurnOnLight:(NSString *)light
 {
-    [self didEnterBeaconwithTour:_colorString andLightNumber:_numberOfItem];
+    [self setlight:light toHue:_currentHue];
 }
 
--(void)resetToWhite
+-(void)setLightToWhite:(NSString *)light
 {
-    [self setlight:0 toHue:35000];
-    [self setlight:1 toHue:35000];
+    [self setlight:light toHue:35000];
 }
 
--(void)setlight:(int)light toHue:(int)color
+-(void)setlight:(NSString *)light toHue:(int)color
 {
-    if (light == 0) light = 2;
-    if (light == 1) light = 3;
-
-    NSURL *aUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/light.php?color=%i&light=%i&sat=255&bri=255", server, color, light]];
+    NSURL *aUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/light.php?color=%i&light=%@&sat=255&bri=255", server, color, light]];
 
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:aUrl
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
@@ -66,68 +76,20 @@
     [connection2 start];
 }
 
--(void)didEnterBeaconwithTour:(NSString *)color andLightNumber:(int)light
+-(void)didEnterBeaconwithTour:(NSString *)color andLightNumber:(NSString *)light
 {
     if ([color isEqualToString:@"red"])
     {
-        if (light == 1)
-        {
-            [self setlight:0 toHue:250];
-            [self setlight:1 toHue:35000];
-        }
-        else
-        {
-            [self setlight:1 toHue:250];
-            [self setlight:0 toHue:35000];
-        }
+        [self setlight:light toHue:red];
     }
     else if ([color isEqualToString:@"blue"])
     {
-        if (light == 1)
-        {
-            [self setlight:0 toHue:45000];
-            [self setlight:1 toHue:35000];
-        }
-        else
-        {
-            [self setlight:1 toHue:45000];
-            [self setlight:0 toHue:35000];
-            ;}
+        [self setlight:light toHue:blue];
     }
     else if ([color isEqualToString:@"yellow"])
     {
-        if (light == 1)
-        {
-            [self setlight:0 toHue:18000];
-            [self setlight:1 toHue:35000];
-        }
-        else
-        {
-            [self setlight:1 toHue:18000];
-            [self setlight:0 toHue:35000];
-        }
+        [self setlight:light toHue:yellow];
     }
-}
-
--(IBAction)red:(UIButton *)sender
-{
-    _numberOfItem = 0;
-    _colorString = @"red";
-    [self didEnterBeaconwithTour:_colorString andLightNumber:_numberOfItem];
-}
-
--(IBAction)blue:(UIButton *)sender
-{
-    _numberOfItem = 0;
-    _colorString = @"blue";
-    [self didEnterBeaconwithTour:_colorString andLightNumber:_numberOfItem];
-}
-
--(IBAction)yellow:(UIButton *)sender
-{
-    _numberOfItem = 0;
-    _colorString = @"yellow";
-    [self didEnterBeaconwithTour:_colorString andLightNumber:_numberOfItem];
 }
 
 @end

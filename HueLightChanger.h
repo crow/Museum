@@ -10,14 +10,10 @@
 
 @interface HueLightChanger : NSObject
 
-@property int numberOfItem;
-
-@property NSString *colorString;
-
 -(id)initWithredORyellowORblue:(NSString *)color;
 
--(void)didEnter;
+-(void)didEnter:(NSString *)light;
 
--(void)didExit;
+-(void)didExitTurnOnLight:(NSString *)light;
 
 @end

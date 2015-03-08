@@ -51,7 +51,7 @@
     self.yellowGlow.alpha = 0.35;
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.2 animations:^{
-            if ([sender.currentTitle isEqualToString: @"All Things Jane"]) {
+            if ([sender.currentTitle isEqualToString: @"Blue Tour"]) {
                 self.blueGlow.alpha = 0.8;
 
                 [TourManager shared].chosenTourColor = @"blue";
@@ -62,7 +62,7 @@
                 // Update registration
                 [[UAPush shared] updateRegistration];
             }
-            if ([sender.currentTitle isEqualToString: @"Shrouded Secrets"]) {
+            if ([sender.currentTitle isEqualToString: @"Red Tour"]) {
                 self.redGlow.alpha = 0.9;
 
                 [TourManager shared].chosenTourColor = @"red";
@@ -72,7 +72,7 @@
                 // Update registration
                 [[UAPush shared] updateRegistration];
             }
-            if ([sender.currentTitle isEqualToString: @"Sounds of the Time"]) {
+            if ([sender.currentTitle isEqualToString: @"Yellow Tour"]) {
                 self.yellowGlow.alpha = 0.5;
 
                 [TourManager shared].chosenTourColor = @"yellow";

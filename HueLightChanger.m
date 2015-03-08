@@ -33,12 +33,16 @@
     {
         self.currentColor = color;
 
-        if ([color isEqualToString:@"red"]) {
+        if ([color isEqualToString:@"red"])
+        {
             self.currentHue = red;
-        } else if ([color isEqualToString:@"blue"])
+        }
+        else if ([color isEqualToString:@"blue"])
         {
             self.currentHue = blue;
-        } else if ([color isEqualToString:@"yellow"]) {
+        }
+        else if ([color isEqualToString:@"yellow"])
+        {
             self.currentHue = yellow;
         }
     }
@@ -47,7 +51,7 @@
 
 -(void)didEnter:(NSString *)light
 {
-    [self setlight:light toHue:self.currentHue];
+    [self setLightToWhite:light];
 }
 
 -(void)didExitTurnOnLight:(NSString *)light

@@ -12,6 +12,7 @@
 #import "HueLightChanger.h"
 #import "UAirship.h"
 #import "UAPush.h"
+#import "TourManager.h"
 
 @interface MuseumViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *blueContainerConstraint;
@@ -65,9 +66,10 @@
 
     }
 
-    if (![GimbalAdapter shared].lightChanger) {
+    //if tourmanager and light changer are uninitialized then it means a tour has already started
+    if (![TourManager shared].lightChanger) {
         NSLog(@"%@ started", sender.titleLabel.text);
-        [GimbalAdapter shared].lightChanger = [[HueLightChanger alloc] initWithredORyellowORblue:self.chosenTourColor];
+        [TourManager shared].lightChanger = [[HueLightChanger alloc] initWithredORyellowORblue:self.chosenTourColor];
     }
 }
 

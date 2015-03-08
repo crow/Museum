@@ -16,7 +16,6 @@
 @property (nonatomic, strong) GMBLVisit *lastEnterVisit;
 @property (nonatomic, strong) GMBLVisit *lastExitVisit;
 
-
 @end
 
 @implementation GimbalAdapter

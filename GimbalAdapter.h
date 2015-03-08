@@ -29,9 +29,4 @@
  */
 - (void)stopAdapter;
 
-
-//light changer dirtiness
-@property (nonatomic, strong) HueLightChanger *lightChanger;
-
-
 @end

@@ -58,6 +58,7 @@
 		61BFFF171AABC5E100A8444F /* UAPushNotificationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BFFF151AABC5E100A8444F /* UAPushNotificationHandler.m */; };
 		61BFFF191AABC96900A8444F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61BFFF181AABC96900A8444F /* AudioToolbox.framework */; };
 		61BFFF1E1AABE6DB00A8444F /* HueLightChanger.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BFFF1D1AABE6DB00A8444F /* HueLightChanger.m */; };
+		61BFFF251AAC8D7800A8444F /* TourManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BFFF241AAC8D7800A8444F /* TourManager.m */; };
 		61D746F51AAB58D500B9F0DF /* list-image-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 61D746F41AAB58D500B9F0DF /* list-image-placeholder.png */; };
 		61D746FD1AAB594C00B9F0DF /* UADateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 61D746F81AAB594C00B9F0DF /* UADateUtils.m */; };
 		61D746FE1AAB594C00B9F0DF /* UAInboxAlertHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 61D746F91AAB594C00B9F0DF /* UAInboxAlertHandler.m */; };
@@ -171,6 +172,8 @@
 		61BFFF181AABC96900A8444F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		61BFFF1C1AABE6DB00A8444F /* HueLightChanger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HueLightChanger.h; sourceTree = "<group>"; };
 		61BFFF1D1AABE6DB00A8444F /* HueLightChanger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HueLightChanger.m; sourceTree = "<group>"; };
+		61BFFF231AAC8D7800A8444F /* TourManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TourManager.h; sourceTree = "<group>"; };
+		61BFFF241AAC8D7800A8444F /* TourManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TourManager.m; sourceTree = "<group>"; };
 		61D746F41AAB58D500B9F0DF /* list-image-placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "list-image-placeholder.png"; path = "../../../Museum/Airship/UI/Default/Inbox/Resources/Shared/list-image-placeholder.png"; sourceTree = "<group>"; };
 		61D746F61AAB591200B9F0DF /* libUAirship-5.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libUAirship-5.1.1.a"; path = "Airship/libUAirship-5.1.1.a"; sourceTree = "<group>"; };
 		61D746F81AAB594C00B9F0DF /* UADateUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = UADateUtils.m; path = ../../../Museum/Airship/UI/Default/Inbox/Classes/Shared/UADateUtils.m; sourceTree = "<group>"; };
@@ -330,6 +333,8 @@
 				E9CB367D12B89BCA002E39EA /* MuseumAppDelegate.m */,
 				E9CB367E12B89BCA002E39EA /* InboxSampleViewController.h */,
 				E9CB367F12B89BCA002E39EA /* InboxSampleViewController.m */,
+				61BFFF231AAC8D7800A8444F /* TourManager.h */,
+				61BFFF241AAC8D7800A8444F /* TourManager.m */,
 				61BFFF1F1AABE6E100A8444F /* Hue */,
 				B09244911AAB912C006377C3 /* Controller */,
 				61D7471C1AAB678900B9F0DF /* Gimbal */,
@@ -693,6 +698,7 @@
 				493977A019B7C1E70063C58F /* InboxSampleModalUserInterface.m in Sources */,
 				61D746FD1AAB594C00B9F0DF /* UADateUtils.m in Sources */,
 				61D746FE1AAB594C00B9F0DF /* UAInboxAlertHandler.m in Sources */,
+				61BFFF251AAC8D7800A8444F /* TourManager.m in Sources */,
 				61D746FF1AAB594C00B9F0DF /* UAInboxMessageListCell.m in Sources */,
 				61D7471F1AAB679600B9F0DF /* GimbalAdapter.m in Sources */,
 				61D747001AAB594C00B9F0DF /* UAInboxMessageListController.m in Sources */,

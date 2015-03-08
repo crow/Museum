@@ -7,6 +7,11 @@
 //
 
 #import "MuseumViewController.h"
+#import "HueLightChanger.h"
+#import "GimbalAdapter.h"
+#import "HueLightChanger.h"
+#import "UAirship.h"
+#import "UAPush.h"
 
 @interface MuseumViewController ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *blueContainerConstraint;
@@ -26,20 +31,47 @@
 
 }
 
-
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     [self animateTourLabels];
 }
 
-
 - (IBAction)tourButtonPressed:(UIButton *)sender {
     self.chosenTourColor = sender.titleLabel.text;
-    NSLog(@"%@", sender.titleLabel.text);
+
+    if ([sender.titleLabel.text isEqualToString:@"Red Tour"]) {
+        self.chosenTourColor = @"red";
+        [[UAPush shared] addTag:[NSString stringWithFormat:@"%@-tour", self.chosenTourColor]];
+
+        // Update registration
+        [[UAPush shared] updateRegistration];
+    }
+
+    if ([sender.titleLabel.text isEqualToString:@"Blue Tour"]) {
+        self.chosenTourColor = @"blue";
+        [[UAPush shared] addTag:[NSString stringWithFormat:@"%@-tour", self.chosenTourColor]];
+
+        // Update registration
+        [[UAPush shared] updateRegistration];
+
+    }
+
+    if ([sender.titleLabel.text isEqualToString:@"Yellow Tour"]) {
+        self.chosenTourColor = @"yellow";
+        [[UAPush shared] addTag:[NSString stringWithFormat:@"%@-tour", self.chosenTourColor]];
+
+        // Update registration
+        [[UAPush shared] updateRegistration];
+
+    }
+
+    if (![GimbalAdapter shared].lightChanger) {
+        NSLog(@"%@ started", sender.titleLabel.text);
+        [GimbalAdapter shared].lightChanger = [[HueLightChanger alloc] initWithredORyellowORblue:self.chosenTourColor];
+    }
 }
 
-
--(void)animateTourLabels{
+-(void)animateTourLabels {
     [UIView animateWithDuration:1.0 animations:^{
         self.blueContainerConstraint.constant = 282;
         self.redContainerConstraint.constant = 348;
@@ -47,4 +79,5 @@
         [self.view layoutIfNeeded];
     }];
 }
+
 @end

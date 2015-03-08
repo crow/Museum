@@ -3,7 +3,6 @@
 #import "UAPush.h"
 #import "UAirship.h"
 #import "UAAnalytics.h"
-#import "HueLightChanger.h"
 
 
 #define kGimbalAdapterEnabled @"ua-gimbal-adapter-enabled"
@@ -13,6 +12,10 @@
 
 @property (assign) BOOL started;
 @property (nonatomic) GMBLPlaceManager *placeManager;
+
+@property (nonatomic, strong) GMBLVisit *lastEnterVisit;
+@property (nonatomic, strong) GMBLVisit *lastExitVisit;
+
 
 @end
 
@@ -89,24 +92,36 @@
 -(void)placeManager:(GMBLPlaceManager *)manager didBeginVisit:(GMBLVisit *)visit {
     UA_LDEBUG(@"Entered a Gimbal Place: %@ on the following date: %@", visit.place.name, visit.arrivalDate);
 
+    if ([self.lastEnterVisit.place.name isEqual:visit.place.name]) {
+        UA_LDEBUG(@"Squelched duplicate entry");
+        return;
+    }
+
     [[UAPush shared] addTag:[NSString stringWithFormat:@"nearby-place-%@", visit.place.name]];
     [[UAPush shared] addTag:[NSString stringWithFormat:@"visited-place-%@", visit.place.name]];
 
     // Update registration
     [[UAPush shared] updateRegistration];
 
-    
-
+    self.lastEnterVisit = visit;
 }
 
 -(void)placeManager:(GMBLPlaceManager *)manager didEndVisit:(GMBLVisit *)visit {
     UA_LDEBUG(@"Exited a Gimbal Place: %@ on the following date: %@", visit.place.name, visit.arrivalDate);
+
+    if ([self.lastExitVisit.place.name isEqual:visit.place.name]) {
+        UA_LDEBUG(@"Squelched duplicate exit");
+        return;
+    }
 
     // Remove the nearby-place-<NAME> tag
     [[UAPush shared] removeTag:[NSString stringWithFormat:@"nearby-place-%@", visit.place.name]];
 
     // Update registration
     [[UAPush shared] updateRegistration];
+
+    self.lastExitVisit = visit;
+
 }
 
 @end

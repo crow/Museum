@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <Gimbal/Gimbal.h>
+#import "HueLightChanger.h"
 
 /**
  * GimbalAdapter interfaces Gimbal SDK functionality with Urban Airship services.
@@ -27,5 +28,10 @@
  * Stops Gimbal adapter.
  */
 - (void)stopAdapter;
+
+
+//light changer dirtiness
+@property (nonatomic, strong) HueLightChanger *lightChanger;
+
 
 @end

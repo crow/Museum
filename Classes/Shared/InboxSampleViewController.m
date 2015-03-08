@@ -137,7 +137,6 @@ typedef NS_ENUM(NSInteger, InboxStyle) {
         popoverOrNav = @"Navigation Controller";
     }
     
-    
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Select Inbox Style" delegate:self 
                         cancelButtonTitle:@"Cancel" 
                    destructiveButtonTitle:nil 

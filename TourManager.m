@@ -38,12 +38,11 @@
 -(void)lightNextFromVisit:(GMBLVisit *) visit andTour:(NSString *) tour{
     NSString *nextLight = [visit.place.attributes stringForKey:[self getKeyFromTour:tour]];
 
-
-    if ([nextLight isEqualToString:@"Light_2"]) {
+    if ([nextLight isEqualToString:@"2"]) {
         //set light 2 - pass in string "2"
     }
 
-    if ([nextLight isEqualToString:@"Light_3"]) {
+    if ([nextLight isEqualToString:@"3"]) {
         //set light 3 - pass in string "3"
     }
 
@@ -51,6 +50,27 @@
 
     }
 }
+
+-(NSString *)getExhibitFromVisit:(GMBLVisit *) visit andTour:(NSString *) tour{
+    NSString *nextLight = [visit.place.attributes stringForKey:[self getKeyFromTour:tour]];
+
+    if ([nextLight isEqualToString:@"1"]) {
+        //set light 2 - pass in string "2"
+    }
+
+    if ([nextLight isEqualToString:@"2"]) {
+        //set light 3 - pass in string "3"
+    }
+
+    if ([nextLight isEqualToString:@"3"]) {
+        //set light 3 - pass in string "3"
+    }
+
+    if ([nextLight isEqualToString:@"Tour_finished"]) {
+        
+    }
+}
+
 
 -(NSString *) getKeyFromTour:(NSString *) tour {
 

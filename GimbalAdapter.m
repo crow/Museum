@@ -106,6 +106,8 @@
 //    // Update registration
 //    [[UAPush shared] updateRegistration];
 
+    //current light
+
     self.lastEnterVisit = visit;
 }
 
@@ -124,20 +126,24 @@
 
     [[TourManager shared] lightNextFromVisit:visit andTour:[TourManager shared].chosenTourColor];
 
+    //give light to turn on
+
     self.lastExitVisit = visit;
 }
 
 -(void)fireFastEvent:(GMBLVisit *) visit {
 
-    if ([visit.place.name isEqualToString:@"Beacon_1"] ) {
+//if next is 2 you can fire 1 etc
+
+    if ([visit.place.name isEqualToString:@"Beacon_1"] && [self.lastExitVisit.place.name isEqualToString:@"Beacon_0"]) {
         [self exhibit1Fast];
     }
 
-    if ([visit.place.name isEqualToString:@"Beacon_2"] ) {
+    if ([visit.place.name isEqualToString:@"Beacon_2"] && [self.lastExitVisit.place.name isEqualToString:@"Beacon_1"]) {
         [self exhibit2Fast];
     }
 
-    if ([visit.place.name isEqualToString:@"Beacon_3"] ) {
+    if ([visit.place.name isEqualToString:@"Beacon_3"] && [self.lastExitVisit.place.name isEqualToString:@"Beacon_2"]) {
         [self exhibit3Fast];
     }
 }

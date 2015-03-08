@@ -35,59 +35,42 @@
     return _sharedObject;
 }
 
--(void)lightNextFromVisit:(GMBLVisit *) visit andTour:(NSString *) tour{
-    NSString *nextLight = [visit.place.attributes stringForKey:[self getKeyFromTour:tour]];
+//-(void)lightNextFromVisit:(GMBLVisit *) visit andTour:(NSString *) tour{
+//    NSString *nextLight = [visit.place.attributes stringForKey:[self getKeyFromTour:tour]];
+//
+//    [[TourManager shared].lightChanger didEnter:nextLight];
+//
+//
+////    if ([nextLight isEqualToString:@"2"]) {
+////    }
+////
+////    if ([nextLight isEqualToString:@"3"]) {
+////        //set light 3 - pass in string "3"
+////    }
+////
+////    if ([nextLight isEqualToString:@"Tour_finished"]) {
+////
+////    }
+//}
 
-    if ([nextLight isEqualToString:@"2"]) {
-        //set light 2 - pass in string "2"
-    }
-
-    if ([nextLight isEqualToString:@"3"]) {
-        //set light 3 - pass in string "3"
-    }
-
-    if ([nextLight isEqualToString:@"Tour_finished"]) {
-
-    }
-}
-
--(NSString *)getExhibitFromVisit:(GMBLVisit *) visit andTour:(NSString *) tour{
-    NSString *nextLight = [visit.place.attributes stringForKey:[self getKeyFromTour:tour]];
-
-    if ([nextLight isEqualToString:@"1"]) {
-        //set light 2 - pass in string "2"
-    }
-
-    if ([nextLight isEqualToString:@"2"]) {
-        //set light 3 - pass in string "3"
-    }
-
-    if ([nextLight isEqualToString:@"3"]) {
-        //set light 3 - pass in string "3"
-    }
-
-    if ([nextLight isEqualToString:@"Tour_finished"]) {
-        
-    }
-}
-
-
--(NSString *) getKeyFromTour:(NSString *) tour {
-
-    if ([tour isEqualToString:@"red"]) {
-        return @"red_tour_next_light";
-    }
-    if ([tour isEqualToString:@"blue"]) {
-        return @"blue_tour_next_light";
-    }
-    if ([tour isEqualToString:@"yellow"]) {
-        return @"yellow_tour_next_light";
-    }
-
-    NSLog(@"NO KEY FOUND");
-    return @"Nokey";
-}
-
-
+//-(NSString *)getExhibitFromVisit:(GMBLVisit *) visit andTour:(NSString *) tour{
+//    NSString *nextLight = [visit.place.attributes stringForKey:[self getKeyFromTour:tour]];
+//
+//    if ([nextLight isEqualToString:@"1"]) {
+//        //set light 2 - pass in string "2"
+//    }
+//
+//    if ([nextLight isEqualToString:@"2"]) {
+//        //set light 3 - pass in string "3"
+//    }
+//
+//    if ([nextLight isEqualToString:@"3"]) {
+//        //set light 3 - pass in string "3"
+//    }
+//
+//    if ([nextLight isEqualToString:@"Tour_finished"]) {
+//        
+//    }
+//}
 
 @end

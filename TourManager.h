@@ -22,8 +22,7 @@
 @property (nonatomic, strong) HueLightChanger *lightChanger;
 
 //chosen tour
-@property (nonatomic) NSString *chosenTourColor;
+@property (nonatomic, strong) NSString *chosenTourColor;
 
--(void)lightNextFromVisit:(GMBLVisit *) visit andTour:(NSString *) tour;
 
 @end

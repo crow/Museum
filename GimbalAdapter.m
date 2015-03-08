@@ -107,6 +107,9 @@
 //    [[UAPush shared] updateRegistration];
 
     //current light
+   // NSString *thisLight = [visit.place.attributes stringForKey:[self getKeyFromTour:[TourManager shared].chosenTourColor]];
+
+    [[TourManager shared].lightChanger didEnter:[self getCurrentLightFromVisit:visit]];
 
     self.lastEnterVisit = visit;
 }
@@ -123,27 +126,29 @@
 //    [[UAPush shared] removeTag:[NSString stringWithFormat:@"nearby-place-%@", visit.place.name]];
 //    // Update registration
 //    [[UAPush shared] updateRegistration];
+    NSString *nextLight = [visit.place.attributes stringForKey:[self getKeyFromTour:[TourManager shared].chosenTourColor]];
 
-    [[TourManager shared] lightNextFromVisit:visit andTour:[TourManager shared].chosenTourColor];
+    [[TourManager shared].lightChanger didExitTurnOnLight:nextLight];
 
     //give light to turn on
 
     self.lastExitVisit = visit;
 }
 
+#warning check this
 -(void)fireFastEvent:(GMBLVisit *) visit {
 
 //if next is 2 you can fire 1 etc
-
-    if ([visit.place.name isEqualToString:@"Beacon_1"] && [self.lastExitVisit.place.name isEqualToString:@"Beacon_0"]) {
+//&& [self.lastExitVisit.place.name isEqualToString:@"Beacon_0"]
+    if ([visit.place.name isEqualToString:@"Beacon_1"] ) {
         [self exhibit1Fast];
     }
 
-    if ([visit.place.name isEqualToString:@"Beacon_2"] && [self.lastExitVisit.place.name isEqualToString:@"Beacon_1"]) {
+    if ([visit.place.name isEqualToString:@"Beacon_2"] ) {
         [self exhibit2Fast];
     }
 
-    if ([visit.place.name isEqualToString:@"Beacon_3"] && [self.lastExitVisit.place.name isEqualToString:@"Beacon_2"]) {
+    if ([visit.place.name isEqualToString:@"Beacon_3"] ) {
         [self exhibit3Fast];
     }
 }
@@ -184,5 +189,38 @@
     [UAActionRunner runActionWithName:@"landing_page_action" withArguments:args withCompletionHandler:completionHandler];
 }
 
+-(NSString *) getKeyFromTour:(NSString *) tour {
+
+    if ([tour isEqualToString:@"red"]) {
+        return @"red_tour_next_light";
+    }
+    if ([tour isEqualToString:@"blue"]) {
+        return @"blue_tour_next_light";
+    }
+    if ([tour isEqualToString:@"yellow"]) {
+        return @"yellow_tour_next_light";
+    }
+
+    NSLog(@"NO KEY FOUND");
+    return @"Nokey";
+}
+
+-(NSString *) getCurrentLightFromVisit:(GMBLVisit *) visit {
+
+    if ([visit.place.name isEqualToString:@"Beacon_1"]) {
+        return @"1";
+    }
+
+    if ([visit.place.name isEqualToString:@"Beacon_2"]) {
+        return @"2";
+    }
+
+    if ([visit.place.name isEqualToString:@"Beacon_3"]) {
+        return @"3";
+    }
+
+    NSLog(@"NO CURRENT LIGHT");
+    return nil;
+}
 
 @end

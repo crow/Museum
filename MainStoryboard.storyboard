@@ -149,8 +149,8 @@
                                                 </state>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="lMp-hY-i4c"/>
                                                         <exclude reference="927-BG-Rjy"/>
+                                                        <exclude reference="lMp-hY-i4c"/>
                                                         <exclude reference="rG8-zv-xOZ"/>
                                                     </mask>
                                                 </variation>
@@ -210,8 +210,8 @@
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="fkj-YM-P7t"/>
                                                         <exclude reference="L3D-8a-eGO"/>
+                                                        <exclude reference="fkj-YM-P7t"/>
                                                     </mask>
                                                 </variation>
                                             </label>
@@ -268,18 +268,21 @@
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
+                                    <constraint firstItem="lm4-aZ-n0B" firstAttribute="top" secondItem="NEp-ff-B0M" secondAttribute="top" constant="348" id="19o-di-N3V"/>
                                     <constraint firstItem="23K-DH-3po" firstAttribute="top" secondItem="NEp-ff-B0M" secondAttribute="top" constant="44" id="1BL-jK-8gt"/>
                                     <constraint firstItem="lm4-aZ-n0B" firstAttribute="top" secondItem="Nmb-na-w24" secondAttribute="bottom" constant="31" id="61q-ps-O1r"/>
                                     <constraint firstItem="lm4-aZ-n0B" firstAttribute="top" secondItem="DSN-AJ-EA8" secondAttribute="bottom" constant="31" id="89x-Ww-M5E"/>
                                     <constraint firstItem="23K-DH-3po" firstAttribute="top" relation="greaterThanOrEqual" secondItem="NEp-ff-B0M" secondAttribute="top" constant="44" id="Dpu-UA-LE6"/>
                                     <constraint firstItem="lm4-aZ-n0B" firstAttribute="leading" secondItem="Nmb-na-w24" secondAttribute="leading" id="MEQ-MT-kcZ"/>
                                     <constraint firstAttribute="centerX" secondItem="DSN-AJ-EA8" secondAttribute="centerX" id="R0L-X8-cU7"/>
+                                    <constraint firstItem="DSN-AJ-EA8" firstAttribute="top" secondItem="NEp-ff-B0M" secondAttribute="top" constant="282" id="Y15-yk-QB6"/>
                                     <constraint firstItem="raX-R0-H5R" firstAttribute="leading" secondItem="op6-jw-etr" secondAttribute="leading" id="ade-Jq-dne"/>
                                     <constraint firstAttribute="centerY" secondItem="DSN-AJ-EA8" secondAttribute="centerY" id="ep5-hH-RnC"/>
                                     <constraint firstAttribute="trailing" secondItem="23K-DH-3po" secondAttribute="trailing" constant="10" id="gj8-lj-qzI"/>
                                     <constraint firstAttribute="centerX" secondItem="Unc-nH-fn4" secondAttribute="centerX" id="k0T-iz-atC"/>
                                     <constraint firstItem="op6-jw-etr" firstAttribute="leading" secondItem="14o-RD-yn1" secondAttribute="trailing" constant="-220" id="mhB-oh-Yt3"/>
                                     <constraint firstItem="op6-jw-etr" firstAttribute="leading" secondItem="14o-RD-yn1" secondAttribute="leading" id="oGa-8m-kF8"/>
+                                    <constraint firstItem="14o-RD-yn1" firstAttribute="top" secondItem="NEp-ff-B0M" secondAttribute="top" constant="413" id="oQg-Op-pGO"/>
                                     <constraint firstItem="14o-RD-yn1" firstAttribute="top" secondItem="lm4-aZ-n0B" secondAttribute="bottom" constant="30" id="pOW-Y4-2wR"/>
                                     <constraint firstItem="23K-DH-3po" firstAttribute="leading" secondItem="NEp-ff-B0M" secondAttribute="leading" constant="10" id="pZt-XB-igg"/>
                                     <constraint firstItem="Nmb-na-w24" firstAttribute="top" secondItem="Unc-nH-fn4" secondAttribute="bottom" constant="30" id="rgz-vU-X8G"/>
@@ -290,6 +293,8 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="Dpu-UA-LE6"/>
+                                        <exclude reference="ep5-hH-RnC"/>
+                                        <exclude reference="61q-ps-O1r"/>
                                         <exclude reference="89x-Ww-M5E"/>
                                         <exclude reference="MEQ-MT-kcZ"/>
                                         <exclude reference="mhB-oh-Yt3"/>
@@ -312,6 +317,11 @@
                             <constraint firstAttribute="trailing" secondItem="auW-qB-HXR" secondAttribute="trailing" id="zyD-jF-CnO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blueContainerConstraint" destination="Y15-yk-QB6" id="hP4-Bw-KeP"/>
+                        <outlet property="redContainerConstraint" destination="19o-di-N3V" id="Hh0-J8-5eH"/>
+                        <outlet property="yellowContainerConstraint" destination="oQg-Op-pGO" id="27d-Iz-2O0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5J-72-hMR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

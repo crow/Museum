@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *redGlow;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *yellowContainerConstraint;
 @property (weak, nonatomic) IBOutlet UILabel *yellowGlow;
-@property (nonatomic) NSString *chosenTourColor;
 @end
 
 @implementation MuseumViewController
@@ -43,8 +42,6 @@
 }
 
 - (IBAction)tourButtonPressed:(UIButton *)sender {
-    self.chosenTourColor = sender.titleLabel.text;
-    
     [UIView animateWithDuration:0.1 animations:^{
     self.blueGlow.alpha = 0.35;
     self.redGlow.alpha = 0.35;
@@ -53,34 +50,18 @@
         [UIView animateWithDuration:0.2 animations:^{
             if ([sender.currentTitle isEqualToString: @"Blue Tour"]) {
                 self.blueGlow.alpha = 0.8;
-
                 [TourManager shared].chosenTourColor = @"blue";
-                [TourManager shared].lightChanger = [[HueLightChanger alloc] initWithredORyellowORblue:[TourManager shared].chosenTourColor];
-
-                [[UAPush shared] addTag:[NSString stringWithFormat:@"%@-tour", self.chosenTourColor]];
-
-                // Update registration
-                [[UAPush shared] updateRegistration];
+                [self initializeTagAndRegister];
             }
             if ([sender.currentTitle isEqualToString: @"Red Tour"]) {
                 self.redGlow.alpha = 0.9;
-
                 [TourManager shared].chosenTourColor = @"red";
-                  [TourManager shared].lightChanger = [[HueLightChanger alloc] initWithredORyellowORblue:[TourManager shared].chosenTourColor];
-                [[UAPush shared] addTag:[NSString stringWithFormat:@"%@-tour", self.chosenTourColor]];
-
-                // Update registration
-                [[UAPush shared] updateRegistration];
+                [self initializeTagAndRegister];
             }
             if ([sender.currentTitle isEqualToString: @"Yellow Tour"]) {
                 self.yellowGlow.alpha = 0.5;
-
                 [TourManager shared].chosenTourColor = @"yellow";
-                  [TourManager shared].lightChanger = [[HueLightChanger alloc] initWithredORyellowORblue:[TourManager shared].chosenTourColor];
-                [[UAPush shared] addTag:[NSString stringWithFormat:@"%@-tour", self.chosenTourColor]];
-
-                // Update registration
-                [[UAPush shared] updateRegistration];
+                [self initializeTagAndRegister];
             }
         }];
     }];
@@ -88,7 +69,7 @@
     //if tourmanager and light changer are uninitialized then it means a tour has already started
     if (![TourManager shared].lightChanger) {
         NSLog(@"%@ started", sender.titleLabel.text);
-        [TourManager shared].lightChanger = [[HueLightChanger alloc] initWithredORyellowORblue:self.chosenTourColor];
+        [TourManager shared].lightChanger = [[HueLightChanger alloc] initWithredORyellowORblue:[TourManager shared].chosenTourColor];
     }
 }
 
@@ -100,5 +81,17 @@
         [self.view layoutIfNeeded];
     }];
 }
+
+#pragma mark - HELPER
+
+-(void)initializeTagAndRegister{
+    [TourManager shared].lightChanger = [[HueLightChanger alloc] initWithredORyellowORblue:[TourManager shared].chosenTourColor];
+
+    [[UAPush shared] addTag:[NSString stringWithFormat:@"%@-tour", [TourManager shared].chosenTourColor]];
+    
+    // Update registration
+    [[UAPush shared] updateRegistration];
+}
+
 
 @end
